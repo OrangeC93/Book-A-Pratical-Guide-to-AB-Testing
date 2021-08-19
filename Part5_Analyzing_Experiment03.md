@@ -6,6 +6,18 @@ The Sample Ratio Mismatch (SRM) metric looks at the ratio of users (or other uni
 
 When the p-value for the Sample Ratio metric is low, that is, the probability of observing such a ratio or more extreme conditioned on the design ratio, there is a sample ratio mismatch (SRM), and all other metrics are probably invalid. You can use a standard t-test or chi-squared test to compute the p-value. 
 
+#### Detect [SRM](https://towardsdatascience.com/the-essential-guide-to-sample-ratio-mismatch-for-your-a-b-tests-96a4db81d7a4)
+``` python
+observed = [ 170471, 171662 ]
+total_traffic= sum(observed)
+expected = [ total_traffic/2, total_traffic/2 ]
+from scipy.stats import chisquare
+chi = chisquare(observed, f_exp=expected)
+print(chi)
+
+Power_divergenceResult(statistic=4.145992932573005, pvalue=0.041733172643879435)
+```
+0.05 might not strict enough for our purposes, Wwat we need is to be stricter for our test of independence. A value below 0.01 should be enough. 
 #### Scenario 1
 - Control: 821,588 users 
 - Treatment: 815,482 users 
