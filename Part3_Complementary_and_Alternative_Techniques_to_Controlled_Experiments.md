@@ -109,6 +109,9 @@ The key concern about PSM is that only observed covariates are accounted for; un
 
 
 #### 6. [Difference in Differences](https://www.eddjberry.com/post/adjustment-in-a-b-testing/)
+[Difference in differences (DiD)](https://medium.com/eatpredlove/regression-difference-in-differences-208c2e787fd2) is a non-experimental statistical technique used to estimate treatment effects by comparing the change (difference) in the differences in observed outcomes between treatment and control groups, across pre-treatment and post-treatment periods.
+DiD is commonly used to recover the causal effect of interest from observational study data — where the experimental design is out of the researcher’s control (e.g. natural experiment) and usually subjected to unobserved confounders and some form of selection bias.
+
 Randomization purpose vs Baseline difference:
 - Suppose we’ve found that the customers in our treatment group historically engaged with emails at a higher rate than our control group. A common thing we might be tempted to do is test whether this baseline difference is significant (Boer et al., 2015). These tests are often used to determine “whether randomization was successful” (Boer et al., 2015), but this represents a misunderstanding of why we randomise (Harvey, 2018). **We do not randomise to ensure that there are no baseline differences between our groups, we randomise to remove any relationship between baseline values and treatment assignment.** The test of baseline differences is then testing a hypothesis we already know to be true: that there is no association between baseline engagement and treatment assignment. We know that the baseline differences are the result of chance because we did the randomisation! 2 As Bland and Altman (2011) put it (as cited by Harvey, 2018):
 
